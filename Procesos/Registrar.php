@@ -23,8 +23,6 @@ $cli->setTipoVivienda($TipoVivienda);
 $cli->setRegion($Region);
 $cli->setComuna($Comuna);
 
-
-asdasd
 $dao = new DaoControlador();
 $resp=$dao->Create($cli);
 
