@@ -1,3 +1,9 @@
+<!-- Login -->
+<?php 
+    include_once '../Complementos/ComprobarSession.php';  
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,55 +23,73 @@
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/lity.js"></script>
-    
+
     <!-- JQuery Validate -->
     <script src="../js/JQuery/jquery.js"></script>
     <script src="../js/JQuery/jquery.validate.js"></script>
-    
+
     <!-- Validaciones Formulario -->
-    <script>
-        $(document).ready(function (event) {
+    <script type="text/javascript">
+        $(document).ready(function() {
             $("#Formulario").validate({
                 rules: {
-                    txtCorreo: "required",
-                    txtRun: "required",
-                    txtNombre: "required",
-                    dtFecha: "required",
-                    txtTelefono: "required"
+                    txtCorreo: {
+                        required: true,
+                        email: true
+                    },
+                    txtRun: {
+                        required: true,
+                        minlength: 12
+                    },
+                    txtNombre: {
+                        required: true,
+                        maxlength: 45
+                    },
+                    txtTelefono: {
+                        required: true,
+                        maxlength: 9
+                    }
                 },
                 messages: {
                     txtCorreo: {
-                        required: "Ingrese su Correo Electronico"
+                        required: "Porfavor, Ingrese su Correo Electronico",
+                        email: "Su Correo Electronico es Invalido, Porfavor Ingrese Correo Valido"
                     },
                     txtRun: {
-                        required: "Ingrese su Run"
+                        required: "Porfavor, Ingrese su Run",
+                        minlength: "Su Run de tener como Minimo 12 Caracteres"
                     },
                     txtNombre: {
-                        required: "Ingrese su Nombre Completo"
-                    },
-                    dtFecha: {
-                        required: "Ingrese su Fecha de Nacimiento"
+                        required: "Porfavor, Ingrese Su Nombre",
+                        maxlength: "Su Nombre de tener como Minimo 45 Caracteres"
                     },
                     txtTelefono: {
-                        required: "Ingrese algun Telefono de Contacto"
+                        required: "Porfavor, Ingrese Algun Numero de Contacto",
+                        maxlength: "Su Telefono de tener como Minimo 9 Digitos"
                     }
                 },
-                submitHandler: function (form) {
-                    $.ajax({
-                        url: '../Procesos/Registrar.php',
-                        type: 'post',
-                        data: $("#Formulario").serialize(),
-                        success: function (data) {
-                            alert(data);
-                        }
-                    });
+                errorElement: "em",
+                errorPlacement: function(error, element) {
+                    // Add the `help-block` class to the error element
+                    error.addClass("help-block");
+
+                    if (element.prop("type") === "checkbox") {
+                        error.insertAfter(element.parent("label"));
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
                 }
             });
         });
     </script>
-    
-
     <!-- Barra de Menu  -->
+    
     <?php include_once('../Complementos/Menu.php'); ?>
 
     <form action="../Procesos/Registrar.php" method="POST" id="Formulario">
@@ -80,15 +104,15 @@
                                 <hr>
                                 <div class="form-group">
                                     <label for="Correo">Correo Electronico:</label><br>
-                                    <input type="text" name="txtCorreo" id="txtCorreo" class="form-control">
+                                    <input type="text" name="txtCorreo" id="txtCorreo" class="form-control" placeholder="Ejemplo@Dominio.com">
                                 </div>
                                 <div class="form-group">
                                     <label for="Run">Run:</label><br>
-                                    <input type="text" name="txtRun" id="txtRun" class="form-control">
+                                    <input type="text" name="txtRun" id="txtRun" class="form-control" placeholder="11.111.111-1">
                                 </div>
                                 <div class="form-group">
                                     <label for="Nombre">Nombre Completo:</label><br>
-                                    <input type="text" name="txtNombre" id="txtNombre" class="form-control">
+                                    <input type="text" name="txtNombre" id="txtNombre" class="form-control" placeholder="Apolo Ducke">
                                 </div>
                                 <div class="form-group">
                                     <label for="FechaNaci">Fecha de Nacimiento:</label><br>
@@ -96,7 +120,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="Telefono">Telefono:</label><br>
-                                    <input type="text" name="txtTelefono" id="txtTelefono" class="form-control">
+                                    <input type="text" name="txtTelefono" id="txtTelefono" class="form-control" placeholder="947261827">
                                 </div>
                                 <div class="form-group">
                                     <label for="Region">Region:</label><br>

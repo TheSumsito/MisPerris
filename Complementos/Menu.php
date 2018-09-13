@@ -18,7 +18,7 @@
                 <a class="nav-link text-white" href="../Vistas/contactanos.php">Contactanos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="../Vistas/login.php">Cerrar Session</a>
+                <a class="nav-link text-white" href="../Procesos/Salir.php">Cerrar Session</a>
             </li>
         </ul>
     </div>

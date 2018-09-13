@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Aspectos.css">
@@ -17,41 +17,52 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
-    
+
     <!-- JQuery Validate -->
     <script src="../js/JQuery/jquery.js"></script>
     <script src="../js/JQuery/jquery.validate.js"></script>
-    
+
     <!-- Validaciones -->
-    <script>
-        $(document).ready(function (event) {
-                $("#Login").validate({
-                    rules: {
-                        txtUser: "required",
-                        txtPass: "required"
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#Login").validate({
+                rules: {
+                    txtUser: {
+                        required: true
                     },
-                    messages: {
-                        txtUser: {
-                            required: "Ingrese un Usuario"
-                        },
-                        txtPass: {
-                            required: "Ingrese una Contraseña"
-                        }
-                    },
-                    submitHandler: function (form) {
-                        $.ajax({
-                            url: '../Vistas/index.php',
-                            type: 'post',
-                            data: $("#Login").serialize(),
-                            success: function (data) {
-                                alert(data);
-                            }
-                        });
+                    txtPass: {
+                        required: true
                     }
-                });
+                },
+                messages: {
+                    txtUser: {
+                        required: "Porfavor, Ingrese Nombre Usuario"
+                    },
+                    txtPass: {
+                        required: "Porfavor, Ingrese la Contraseña del Usuario",
+                    }
+                },
+                errorElement: "em",
+                errorPlacement: function(error, element) {
+                    // Add the `help-block` class to the error element
+                    error.addClass("help-block");
+
+                    if (element.prop("type") === "checkbox") {
+                        error.insertAfter(element.parent("label"));
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
+                }
             });
+        });
     </script>
-    
+
     <!-- Login -->
     <form action="../Procesos/Validar.php" method="POST" id="Login">
         <div id="login">
@@ -64,11 +75,11 @@
                                 <h3 class="text-center">Iniciar Session</h3>
                                 <div class="form-group">
                                     <label for="username">Username:</label><br>
-                                    <input type="text" name="txtUser" id="txtUser" class="form-control">
+                                    <input type="text" name="txtUser" id="txtUser" class="form-control" placeholder="Usuario">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password:</label><br>
-                                    <input type="password" name="txtPass" id="txtPass" class="form-control">
+                                    <input type="password" name="txtPass" id="txtPass" class="form-control" placeholder="Contraseña">
                                 </div>
                                 <div class="form-group" method="post" action="../Procesos/Validar.php">
                                     <input type="submit" name="btnIngresar" class="btn btn-info btn-md" value="Ingresar">
