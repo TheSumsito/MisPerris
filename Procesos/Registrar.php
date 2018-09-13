@@ -5,8 +5,8 @@ $NombreCompleto=$_POST["txtNombre"];
 $FechaNaci=$_POST["dtFecha"];
 $Telefono=$_POST["txtTelefono"];
 $TipoVivienda=$_POST["cboTipoVivienda"];
-$Comuna=$_POST["txtComuna"];
-$Region=$_POST["txtRegion"];
+$Region=$_POST["cboRegion"];
+$Ciudad=$_POST["cboCiudad"];
 
 
 include_once '../Controladores/Conexion.php';
@@ -21,7 +21,7 @@ $cli->setFechaNaci($FechaNaci);
 $cli->setTelefono($Telefono);
 $cli->setTipoVivienda($TipoVivienda);
 $cli->setRegion($Region);
-$cli->setComuna($Comuna);
+$cli->setCiudad($Ciudad);
 
 $dao = new DaoControlador();
 $resp=$dao->Create($cli);

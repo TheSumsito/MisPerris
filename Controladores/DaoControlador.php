@@ -23,7 +23,7 @@ class DaoControlador {
             $sql= str_replace("@Telefono", $Cliente->getTelefono(), $sql);
             $sql= str_replace("@TipoVivienda", $Cliente->getTipoVivienda(), $sql);
             $sql= str_replace("@region_IdRegion", $Cliente->getRegion(), $sql);
-            $sql= str_replace("@comuna_IdComuna", $Cliente->getComuna(), $sql);
+            $sql= str_replace("@comuna_IdComuna", $Cliente->getCiudad(), $sql);
             $filas_afectadas = $this->cone->SqlOperacion($sql);
             return $filas_afectadas;
             

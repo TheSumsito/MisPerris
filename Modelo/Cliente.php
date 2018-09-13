@@ -6,7 +6,7 @@ class Cliente {
     private $NombreCompleto;
     private $FechaNaci;
     private $Telefono;
-    private $Comuna;
+    private $Ciudad;
     private $Region;
     private $TipoVivienda;
     
@@ -34,8 +34,8 @@ class Cliente {
         return $this->Telefono;
     }
 
-    function getComuna() {
-        return $this->Comuna;
+    function getCiudad() {
+        return $this->Ciudad;
     }
 
     function getRegion() {
@@ -66,8 +66,8 @@ class Cliente {
         $this->Telefono = $Telefono;
     }
 
-    function setComuna($Comuna) {
-        $this->Comuna = $Comuna;
+    function setCiudad($Ciudad) {
+        $this->Ciudad = $Ciudad;
     }
 
     function setRegion($Region) {
@@ -77,8 +77,6 @@ class Cliente {
     function setTipoVivienda($TipoVivienda) {
         $this->TipoVivienda = $TipoVivienda;
     }
-
-
 
 
     

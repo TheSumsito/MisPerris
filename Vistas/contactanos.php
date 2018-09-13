@@ -32,35 +32,55 @@
                                 <h3 class="text-center">Formulario de Registro</h3>
                                 <hr>
                                 <div class="form-group">
-                                    <label for="username">Correo Electronico:</label><br>
+                                    <label for="Correo">Correo Electronico:</label><br>
                                     <input type="text" name="txtCorreo" id="txtCorreo" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="username">Run:</label><br>
+                                    <label for="Run">Run:</label><br>
                                     <input type="text" name="txtRun" id="txtRun" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="username">Nombre Completo:</label><br>
+                                    <label for="Nombre">Nombre Completo:</label><br>
                                     <input type="text" name="txtNombre" id="txtNombre" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="username">Fecha de Nacimiento:</label><br>
+                                    <label for="FechaNaci">Fecha de Nacimiento:</label><br>
                                     <input type="date" name="dtFecha" id="dtFecha" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="username">Telefono:</label><br>
+                                    <label for="Telefono">Telefono:</label><br>
                                     <input type="text" name="txtTelefono" id="txtTelefono" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="username">Region:</label><br>
-                                    <input type="text" name="txtRegion" id="txtRegion" class="form-control">
+                                    <label for="Region">Region:</label><br>
+                                    <select class="form-control" id="cboRegion" name="cboRegion">
+                                        <?php
+                                            $Cone= mysqli_connect("localhost", "root", "", "misperris");
+                                            $region="select * from region";
+                                            $reg= mysqli_query($Cone, $region);
+                                            
+                                            while ($row = mysqli_fetch_array($reg)) {
+                                                echo '<option value='.$row[0].'>'.$row[1].'</option>';
+                                            }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="username">Comuna:</label><br>
-                                    <input type="text" name="txtComuna" id="txtComuna" class="form-control">
+                                    <label for="Ciudad">Ciudad:</label><br>
+                                    <select class="form-control" id="cboCiudad" name="cboCiudad">
+                                        <?php         
+                                            $Cone= mysqli_connect("localhost", "root", "", "misperris");
+                                            $comuna="select * from ciudad";
+                                            $comu= mysqli_query($Cone, $comuna); 
+
+                                            while ($row = mysqli_fetch_array($comu)) {
+                                                echo '<option value='.$row[0].'>'.$row[1].'</option>';
+                                            }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="username">Tipo de Vivienda:</label><br>
+                                    <label for="TipoVivienda">Tipo de Vivienda:</label><br>
                                     <select name="cboTipoVivienda" id="cboTipoVivienda" class="form-control">
                                         <option value="C_Patio_Gr">Casa con Patio Grande</option>
                                         <option value="C_Patio_Pe">Casa con Patio Pequeño</option>
