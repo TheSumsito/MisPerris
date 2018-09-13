@@ -89,6 +89,21 @@
             });
         });
     </script>
+     <script>
+        $(document).ready(function (event) {
+            $("#cboRegion").change(function () {
+                var id = $("#cboRegion").val();
+                $.ajax({
+                    url: "../Procesos/LlenarCombo.php",
+                    type: 'POST',
+                    data: {IdRegion: id},
+                    success: function (data) {
+                        $('#cboCiudad').html(data);
+                    }
+                });
+            });
+        });
+    </script>
     <!-- Barra de Menu  -->
     
     <!-- Logo MisPerris-->
@@ -163,15 +178,14 @@
                                 <div class="form-group">
                                     <label for="Ciudad">Ciudad:</label><br>
                                     <select class="form-control" id="cboCiudad" name="cboCiudad">
-                                        <?php         
+                                        <?php
                                             $Cone= mysqli_connect("localhost", "root", "", "misperris");
-                                            $comuna="select * from ciudad";
-                                            $comu= mysqli_query($Cone, $comuna); 
-
-                                            while ($row = mysqli_fetch_array($comu)) {
+                                            $sql="select * from ciudad";
+                                            $cid= mysqli_query($Cone, $sql);
+                                            
+                                            while ($row = mysqli_fetch_array($cid)) {
                                                 echo '<option value='.$row[0].'>'.$row[1].'</option>';
                                             }
-
                                         ?>
                                     </select>
                                 </div>
