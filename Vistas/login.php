@@ -9,6 +9,7 @@
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Aspectos.css">
+    <link rel="shortcut icon" href="../img/Otras/logo_perris.png"/>
     <title>login</title>
 </head>
 
@@ -64,7 +65,7 @@
     </script>
 
     <!-- Login -->
-    <form action="../Procesos/Validar.php" method="POST" id="Login">
+    <form action="../Procesos/Validar.php" method="POST" id="Login" autocomplete="off">
         <div id="login">
             <h3 class="text-center text-white pt-5"></h3>
             <div class="container">

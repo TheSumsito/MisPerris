@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/Aspectos.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/lity.css">
+    <link rel="shortcut icon" href="../img/Otras/logo_perris.png"/>
     <title>Bienvenido a MisPerris</title>
 </head>
 

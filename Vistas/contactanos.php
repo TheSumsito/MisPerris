@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/lity.css">
     <link rel="stylesheet" href="../css/Aspectos.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="../img/Otras/logo_perris.png" />
+    <title>Formulario</title>
 </head>
 
 <body>
@@ -39,7 +40,7 @@
                     },
                     txtRun: {
                         required: true,
-                        minlength: 12
+                        minlength: 11
                     },
                     txtNombre: {
                         required: true,
@@ -57,7 +58,7 @@
                     },
                     txtRun: {
                         required: "Porfavor, Ingrese su Run",
-                        minlength: "Su Run de tener como Minimo 12 Caracteres"
+                        minlength: "Su Run de tener como Minimo 11 Caracteres"
                     },
                     txtNombre: {
                         required: "Porfavor, Ingrese Su Nombre",
@@ -92,7 +93,7 @@
     
     <?php include_once('../Complementos/Menu.php'); ?>
 
-    <form action="../Procesos/Registrar.php" method="POST" id="Formulario">
+    <form action="../Procesos/Registrar.php" method="POST" id="Formulario" autocomplete="off">
         <div id="login">
             <div class="container">
                 <div id="login-row" class="row justify-content-center align-items-center">
@@ -104,15 +105,15 @@
                                 <hr>
                                 <div class="form-group">
                                     <label for="Correo">Correo Electronico:</label><br>
-                                    <input type="text" name="txtCorreo" id="txtCorreo" class="form-control" placeholder="Ejemplo@Dominio.com">
+                                    <input type="text" name="txtCorreo" id="txtCorreo" class="form-control" placeholder="Ej: Ejemplo@Dominio.com">
                                 </div>
                                 <div class="form-group">
                                     <label for="Run">Run:</label><br>
-                                    <input type="text" name="txtRun" id="txtRun" class="form-control" placeholder="11.111.111-1">
+                                    <input type="text" name="txtRun" id="txtRun" class="form-control" placeholder="Ej: 11.111.111-1">
                                 </div>
                                 <div class="form-group">
                                     <label for="Nombre">Nombre Completo:</label><br>
-                                    <input type="text" name="txtNombre" id="txtNombre" class="form-control" placeholder="Apolo Ducke">
+                                    <input type="text" name="txtNombre" id="txtNombre" class="form-control" placeholder="Ej: Apolo Ducke">
                                 </div>
                                 <div class="form-group">
                                     <label for="FechaNaci">Fecha de Nacimiento:</label><br>
@@ -120,7 +121,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="Telefono">Telefono:</label><br>
-                                    <input type="text" name="txtTelefono" id="txtTelefono" class="form-control" placeholder="947261827">
+                                    <input type="text" name="txtTelefono" id="txtTelefono" class="form-control" placeholder="Ej: 947261827">
                                 </div>
                                 <div class="form-group">
                                     <label for="Region">Region:</label><br>
