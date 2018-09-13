@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="../css/lity.css">
     <link rel="stylesheet" href="../css/Aspectos.css">
     <link rel="shortcut icon" href="../img/Otras/logo_perris.png" />
-    <title>Formulario</title>
+    <title>Contactanos</title>
 </head>
 
-<body>
+<body class="BodyForm">
     <!-- JavaScript BootStrap-->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery-3.3.1.slim.min.js"></script>

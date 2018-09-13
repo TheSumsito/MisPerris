@@ -13,7 +13,7 @@
     <title>login</title>
 </head>
 
-<body class="body">
+<body class="body BodyLog">
     <!-- JavaScript BootStrap -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
@@ -73,7 +73,7 @@
                     <div id="login-column" class="col-md-6">
                         <div id="login-box" class="col-md-12">
                             <form id="login-form" class="form" action="" method="post">
-                                <h3 class="text-center">Iniciar Session</h3>
+                                <h3 class="text-center">Iniciar Sesion</h3>
                                 <div class="form-group">
                                     <label for="username">Username:</label><br>
                                     <input type="text" name="txtUser" id="txtUser" class="form-control" placeholder="Usuario">

@@ -54,24 +54,32 @@
     <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <img class="d-block w-100" style="height: 550px;" src="../img/adoptados/Apolo.jpg" alt="First slide">
+                <img class="d-block w-100" style="height: 550px;" src="../img/adoptados/Apolo.jpg" alt="Apolo">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Hola Amayita</h5>
-                    <p>asdasdasdas</p>
+                    <strong><h1 class="text-muted">APOLO</h1></strong>
+                    <h4 class="text-muted">Gracias por adoptarme!! Cambiaste mi vida.</h4>
+                    </p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" style="height: 550px;" src="../img/adoptados/Duque.jpg" alt="Second slide">
+                <img class="d-block w-100" style="height: 550px;" src="../img/adoptados/Duque.jpg" alt="Duque">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Hola Amayita</h5>
-                    <p>asdasdasdas</p>
+                    <strong><h1>DUQUE</h1></strong>
+                    <h4>Gracias por compartir nuevos lugares conmigo</h4>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" style="height: 550px;" src="../img/adoptados/Tom.jpg" alt="Third slide">
+                <img class="d-block w-100" style="height: 550px;" src="../img/adoptados/Tom.jpg" alt="Tom">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Hola Amayita</h5>
-                    <p>asdasdasdas</p>
+                    <strong><h4>TOM</h4></strong>
+                    <H4>Crezcamos juntos!!!</H4>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" style="height: 550px;" src="../img/Otras/Mayita.jpg" alt="Amaya">
+                <div class="carousel-caption d-none d-md-block">
+                    <strong><h4>AMAYA</h4></strong>
+                    <H4>Tengo hambre... HUMANO.</H4>
                 </div>
             </div>
         </div>
