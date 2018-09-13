@@ -13,5 +13,5 @@
         header('location: ../Vistas/index.php');
     }
     else{
-        echo "Error en la Autentificación";
+        echo '<script> alert("Usuario No Existe"); document.location.href="../Vistas/login.php"</script>';
     }

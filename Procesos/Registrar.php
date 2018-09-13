@@ -27,8 +27,8 @@ $dao = new DaoControlador();
 $resp=$dao->Create($cli);
 
 if($resp > 0){
-    echo "Grabo";
+    echo '<script> alert("Cliente Ingresado Correctamente"); document.location.href="../Vistas/Contactanos.php"</script>';
 }
 else{
-    echo "No Grabo";
+    echo '<script> alert("Cliente No fue Ingresado"); document.location.href="../Vistas/Contactanos.php"</script>';
 }
