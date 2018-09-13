@@ -15,7 +15,10 @@
                 <a class="nav-link text-white" href="#">Servicios</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="../Vistas/contacto.php">Contactanos</a>
+                <a class="nav-link text-white" href="../Vistas/contactanos.php">Contactanos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="../Vistas/login.php">Cerrar Session</a>
             </li>
         </ul>
     </div>
