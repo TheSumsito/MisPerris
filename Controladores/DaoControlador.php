@@ -15,7 +15,7 @@ class DaoControlador {
     
     public function Create($Cliente){
         try {
-            $sql="insert into cliente values ('@Correo','@RutCliente','@NombreCompleto', @FechaNaci, '@Telefono', '@TipoVivienda', @region_IdRegion, @comuna_IdComuna)";
+            $sql="insert into cliente values ('@Correo','@RutCliente','@NombreCompleto', '@FechaNaci', '@Telefono', '@TipoVivienda', @region_IdRegion, @comuna_IdComuna)";
             $sql= str_replace("@Correo", $Cliente->getCorreo(), $sql);
             $sql= str_replace("@RutCliente", $Cliente->getRutCliente(), $sql);
             $sql= str_replace("@NombreCompleto", $Cliente->getNombreCompleto(), $sql);
