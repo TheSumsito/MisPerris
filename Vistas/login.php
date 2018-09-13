@@ -5,19 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Aspectos.css">
     <title>login</title>
 </head>
 
 <body class="body">
+    <!-- JavaScript BootStrap -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
+    
+    <!-- JQuery Validate -->
     <script src="../js/JQuery/jquery.js"></script>
     <script src="../js/JQuery/jquery.validate.js"></script>
-
-    <form action="../Procesos/Validar.php" method="POST">
+    
+    <!-- Validaciones -->
+    <script>
+        $(document).ready(function (event) {
+                $("#Login").validate({
+                    rules: {
+                        txtUser: "required",
+                        txtPass: "required"
+                    },
+                    messages: {
+                        txtUser: {
+                            required: "Ingrese un Usuario"
+                        },
+                        txtPass: {
+                            required: "Ingrese una Contraseña"
+                        }
+                    },
+                    submitHandler: function (form) {
+                        $.ajax({
+                            url: '../Vistas/index.php',
+                            type: 'post',
+                            data: $("#Login").serialize(),
+                            success: function (data) {
+                                alert(data);
+                            }
+                        });
+                    }
+                });
+            });
+    </script>
+    
+    <!-- Login -->
+    <form action="../Procesos/Validar.php" method="POST" id="Login">
         <div id="login">
             <h3 class="text-center text-white pt-5"></h3>
             <div class="container">
@@ -35,7 +71,7 @@
                                     <input type="password" name="txtPass" id="txtPass" class="form-control">
                                 </div>
                                 <div class="form-group" method="post" action="../Procesos/Validar.php">
-                                    <input type="submit" name="Ingresar" class="btn btn-info btn-md" value="Ingresar">
+                                    <input type="submit" name="btnIngresar" class="btn btn-info btn-md" value="Ingresar">
                                 </div>
                             </form>
                         </div>

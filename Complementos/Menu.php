@@ -1,6 +1,6 @@
     <!-- Logo MisPerris-->
     <div class="container-fluid" style="background-color: rgb(111, 198, 169)" align="center">
-        <a href=""><img src="../img/Otras/logo.png" class="img.fluid" alt=""></a>
+        <a href="../Vistas/index.php"><img src="../img/Otras/logo.png" class="img.fluid" alt=""></a>
     </div>
     <!-- Barra de Menu  -->
     <div class="contenedor" style="background-color: rgb(111, 198, 169)">

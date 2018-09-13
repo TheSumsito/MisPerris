@@ -4,12 +4,9 @@
         $user=$_SESSION["user"];
     }
     else {
-        header("location: ../Vistas/login.php");
+       //header("location: ../Vistas/login.php");
     }
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">

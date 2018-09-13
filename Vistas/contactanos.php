@@ -17,11 +17,58 @@
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/lity.js"></script>
+    
+    <!-- JQuery Validate -->
+    <script src="../js/JQuery/jquery.js"></script>
+    <script src="../js/JQuery/jquery.validate.js"></script>
+    
+    <!-- Validaciones Formulario -->
+    <script>
+        $(document).ready(function (event) {
+            $("#Formulario").validate({
+                rules: {
+                    txtCorreo: "required",
+                    txtRun: "required",
+                    txtNombre: "required",
+                    dtFecha: "required",
+                    txtTelefono: "required"
+                },
+                messages: {
+                    txtCorreo: {
+                        required: "Ingrese su Correo Electronico"
+                    },
+                    txtRun: {
+                        required: "Ingrese su Run"
+                    },
+                    txtNombre: {
+                        required: "Ingrese su Nombre Completo"
+                    },
+                    dtFecha: {
+                        required: "Ingrese su Fecha de Nacimiento"
+                    },
+                    txtTelefono: {
+                        required: "Ingrese algun Telefono de Contacto"
+                    }
+                },
+                submitHandler: function (form) {
+                    $.ajax({
+                        url: '../Procesos/Registrar.php',
+                        type: 'post',
+                        data: $("#Formulario").serialize(),
+                        success: function (data) {
+                            alert(data);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    
 
     <!-- Barra de Menu  -->
     <?php include_once('../Complementos/Menu.php'); ?>
 
-    <form action="../Procesos/Registrar.php" method="POST">
+    <form action="../Procesos/Registrar.php" method="POST" id="Formulario">
         <div id="login">
             <div class="container">
                 <div id="login-row" class="row justify-content-center align-items-center">
@@ -76,6 +123,7 @@
                                             while ($row = mysqli_fetch_array($comu)) {
                                                 echo '<option value='.$row[0].'>'.$row[1].'</option>';
                                             }
+
                                         ?>
                                     </select>
                                 </div>
