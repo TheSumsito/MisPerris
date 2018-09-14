@@ -75,13 +75,6 @@
                     <H4>Crezcamos juntos!!!</H4>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" style="height: 550px;" src="../img/Otras/Mayita.jpg" alt="Amaya">
-                <div class="carousel-caption d-none d-md-block">
-                    <strong><h4>AMAYA</h4></strong>
-                    <H4>Tengo hambre... HUMANO.</H4>
-                </div>
-            </div>
         </div>
         <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

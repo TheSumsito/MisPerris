@@ -27,8 +27,8 @@ $dao = new DaoControlador();
 $resp=$dao->Create($cli);
 
 if($resp > 0){
-    echo '<script> alert("Cliente Ingresado Correctamente"); document.location.href="../Vistas/Contactanos.php"</script>';
+    echo '<script> alert("Cliente Ingresado Correctamente"); document.location.href="../Vistas/index.php"</script>';
 }
 else{
-    echo '<script> alert("Cliente No fue Ingresado"); document.location.href="../Vistas/Contactanos.php"</script>';
+    echo '<script> alert("Cliente No fue Ingresado"); document.location.href="../Vistas/index.php"</script>';
 }
