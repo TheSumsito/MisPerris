@@ -89,21 +89,25 @@
             });
         });
     </script>
-     <script>
+    <script>
         $(document).ready(function (event) {
             $("#cboRegion").change(function () {
-                var id = $("#cboRegion").val();
+                var id=$("#cboRegion").val();
                 $.ajax({
                     url: "../Procesos/LlenarCombo.php",
-                    type: 'POST',
-                    data: {IdRegion: id},
-                    success: function (data) {
-                        $('#cboCiudad').html(data);
+                    type: "POST",
+                    data: {IdRegion:id},
+                    success: function(data){
+                        $("#cboCiudad").html(data);
                     }
                 });
             });
         });
     </script>
+    <?php
+        $cone = mysqli_connect("localhost", "root", "", "misperris");
+        $reg = mysqli_query($cone, "select * from region");
+    ?>
     <!-- Barra de Menu  -->
     
     <!-- Logo MisPerris-->
@@ -165,29 +169,15 @@
                                     <label for="Region">Region:</label><br>
                                     <select class="form-control" id="cboRegion" name="cboRegion">
                                         <?php
-                                            $Cone= mysqli_connect("localhost", "root", "", "misperris");
-                                            $region="select * from region";
-                                            $reg= mysqli_query($Cone, $region);
-                                            
                                             while ($row = mysqli_fetch_array($reg)) {
-                                                echo '<option value='.$row[0].'>'.$row[1].'</option>';
+                                                echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
                                             }
                                         ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="Ciudad">Ciudad:</label><br>
-                                    <select class="form-control" id="cboCiudad" name="cboCiudad">
-                                        <?php
-                                            $Cone= mysqli_connect("localhost", "root", "", "misperris");
-                                            $sql="select * from ciudad";
-                                            $cid= mysqli_query($Cone, $sql);
-                                            
-                                            while ($row = mysqli_fetch_array($cid)) {
-                                                echo '<option value='.$row[0].'>'.$row[1].'</option>';
-                                            }
-                                        ?>
-                                    </select>
+                                    <select class="form-control" id="cboCiudad" name="cboCiudad"></select>
                                 </div>
                                 <div class="form-group">
                                     <label for="TipoVivienda">Tipo de Vivienda:</label><br>
