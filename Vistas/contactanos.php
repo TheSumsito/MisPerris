@@ -49,6 +49,9 @@
                     txtTelefono: {
                         required: true,
                         maxlength: 9
+                    },
+                    cboCiudad:{
+                        required: true
                     }
                 },
                 messages: {
@@ -67,6 +70,9 @@
                     txtTelefono: {
                         required: "Porfavor, Ingrese Algun Numero de Contacto",
                         maxlength: "Su Telefono de tener como Minimo 9 Digitos"
+                    },
+                    cboCiudad:{
+                        required: "Porfavor, Seleccione alguna Region y luego Seleccione su Ciudad Correspondiente"
                     }
                 },
                 errorElement: "em",
